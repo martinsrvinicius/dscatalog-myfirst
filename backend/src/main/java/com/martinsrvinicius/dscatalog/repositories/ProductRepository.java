@@ -19,7 +19,8 @@ public interface ProductRepository extends JpaRepository<Product, Long> {
 	List<Product> findProductCategories(List<Product> products);
 	
 	@Query("SELECT DISTINCT obj FROM Product obj INNER JOIN obj.categories cats WHERE "
-			+ "(COALESCE(:categories) IS NULL OR cats IN :categories) AND "
+			//LINE FOR POSTGRES + "(:categories IS NULL OR cats IN :categories) AND "
+			+ "(:categories IS NULL OR cats IN :categories) AND "
 			+ "(LOWER(obj.name) LIKE LOWER(CONCAT('%', :name, '%')))")
 	Page<Product> findAllCustom(List<Category> categories, String name, Pageable pageable);
 }
