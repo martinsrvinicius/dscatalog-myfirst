@@ -1,5 +1,6 @@
 
 import ProductCard from 'components/ProductCard';
+import { NavLink } from 'react-router-dom';
 import { Product } from 'types/product';
 
 const Catalog = () => {
@@ -27,19 +28,29 @@ const Catalog = () => {
     <div className="container my-4">
       <div className="row">
         <div className="col-sm-6 col-lg-4 col-xl-3">
-          <ProductCard product={product} />
+          <NavLink to="/products/1">
+            <ProductCard product={product} />
+          </NavLink>
         </div>
         <div className="col-sm-6 col-lg-4 col-xl-3">
-          <ProductCard product={product} />
+          <NavLink to="/products/1">
+            <ProductCard product={product} />
+          </NavLink>
         </div>
         <div className="col-sm-6 col-lg-4 col-xl-3">
-          <ProductCard product={product} />
+          <NavLink to="/products/1">
+            <ProductCard product={product} />
+          </NavLink>
         </div>
         <div className="col-sm-6 col-lg-4 col-xl-3">
-          <ProductCard product={product} />
+          <NavLink to="/products/1">
+            <ProductCard product={product} />
+          </NavLink>
         </div>
         <div className="col-sm-6 col-lg-4 col-xl-3">
-          <ProductCard product={product} />
+          <NavLink to="/products/1">
+            <ProductCard product={product} />
+          </NavLink>
         </div>
       </div>
     </div>
